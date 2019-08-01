@@ -1,0 +1,192 @@
+slide-to-accept-success {
+  $duration: 400ms;
+  $delay: 200ms;
+  $lose-color: #d6694d;
+  $win-color: #57be91;
+
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  text-align: center;
+  display: flex;
+  //align-items: center;
+  //justify-content: center;
+  color: white;
+  flex-direction: column;
+
+  
+
+  .slide-success {
+    // For animating in
+    &-background {
+      $start-radius: 5;
+      $scale-factor: 25;
+      height: 10vmax;
+      width: 10vmax;
+      background: $v-slider-bg-color;
+      bottom: 0;
+      position: absolute;
+      left: calc(50% - 5vmax);
+      border-radius: 50%;
+      transition: transform $duration*1.5 ease, background $duration*1.5 ease;
+
+      &.fill-screen {
+        -webkit-transform: scale3d($scale-factor, $scale-factor, 1) translateY(-40%);
+        transform: scale3d($scale-factor, $scale-factor, 1) translateY(-40%);
+        background-color: red;
+        @include p3-green();
+
+        &.did-lose {
+          background: $lose-color;
+        }
+  
+        &.did-win {
+          @include p3-green();
+        }
+      }
+    }
+
+    &-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+      bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+      left: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &-content {
+      flex-grow: 1;
+      z-index: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around; // For Android 4.4
+      justify-content: space-evenly;
+
+      -webkit-transform: translateY(5rem);
+      transform: translateY(5rem);
+      opacity: 0;
+      transition: transform $duration ease, opacity $duration ease;
+      transition-delay: $delay;
+
+      &.reveal {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    &-status-text {
+      font-size: 28px;
+      line-height: 1.5;
+      max-width: 100%;
+      padding: 0 16px;
+
+      .address {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+      }
+      /*
+      span {
+        margin-top: 
+      }
+      */
+    }
+
+    &-content-action {
+      height: 4em;
+      width: 100%;
+    }
+
+    &-content-share {
+      font-size: 22px;
+      height: 28px;
+      width: 200%;
+
+      img {
+        height: 28px;
+        width: auto;
+        vertical-align: bottom;
+        margin-right: 4px;
+      }
+    }
+
+    &-footer {
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 0 1.75rem;
+      width: 100%;
+      z-index: 1;
+      -webkit-transform: translateY(5rem);
+      transform: translateY(5rem);
+      opacity: 0;
+      transition: transform $duration ease, opacity $duration ease;
+      transition-delay: $delay;
+
+      &.reveal {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+
+    }
+
+    &-footer-button {
+      display: block;
+      color: #FFFFFF;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 2.86px;
+      padding: 2rem 0 2.1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+    }
+
+    &-status {
+      height: 25vh;
+    }
+    
+    &-button {
+      border: 2px solid white;
+      border-radius: 2em;
+      font-size: 22px;
+      height: 100%;
+      line-height: 64px;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+
+    &-button-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-spinner {
+      height: 100%;
+      background-image: url("../img/loader.gif");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &-spinner-container {
+      height: 100%;
+      min-width: 50%;
+    }
+  }
+}

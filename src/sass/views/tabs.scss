@@ -1,0 +1,87 @@
+.tabs .tab-item {
+  .icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 6px 0 2px;
+    &.ico-home {
+      background-image: $v-tab-home-icon;
+    }
+    &.ico-home-selected {
+      background-image: $v-tab-home-selected-icon;
+    }
+    &.ico-receive {
+      background-image: $v-tab-receive-icon;
+    }
+    &.ico-receive-selected {
+      background-image: $v-tab-receive-selected-icon;
+    }
+    &.ico-settings {
+      background-image: $v-tab-settings-icon;
+    }
+    &.ico-settings-selected {
+      background-image: $v-tab-settings-selected-icon;
+    }
+    &.ico-scan {
+      background-image: $v-tab-scan-icon;
+    }
+    &.ico-scan-selected {
+      background-image: $v-tab-scan-selected-icon;
+    }
+    &.ico-send {
+      background-image: $v-tab-send-icon;
+    }
+    &.ico-send-selected {
+      background-image: $v-tab-send-selected-icon;
+    }
+    &.ico-spend {
+      background-image: $v-tab-spend-icon;
+    }
+    &.ico-spend-selected {
+      background-image: $v-tab-spend-selected-icon;
+    }
+  }
+}
+
+#tab-home, #tab-send {
+  .card, .list {
+    & > .item-heading {
+      font-weight: 700;
+      .icon {
+        color: $v-mid-gray;
+      }
+      .subtitle {
+        color: $v-mid-gray;
+        font-size: $font-size-small;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.tabs-icon-top > .tabs .tab-item {
+  font-size: 12px;
+}
+
+ion-tabs {
+
+ &.tabs-color-active-positive .tab-item {
+  color: #B0B0B4;
+  //fill: #B9B9B9;
+  font-family: ProximaNova;
+  font-weight: bold;
+
+  &.tab-item-active {
+    color: #0AC18E;
+  }
+ }
+
+ .tab-item {
+   opacity: 1.0;
+ }
+
+ .tab-title {
+   height: 15px;
+   line-height: 15px;
+ }
+
+}

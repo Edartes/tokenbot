@@ -1,0 +1,24 @@
+#tx-details {
+  .action-created.action-accepted {
+    color: green;
+  }
+
+  .action-rejected {
+    color: red;
+  }
+}
+
+.tx-details-content {
+
+  img.satoshi-dice {
+    border-radius: 50%;
+    border: 2px solid #BEBEBE;
+
+    &.received {
+      border-color:#09C286;
+    }
+  }
+}
+
+
+

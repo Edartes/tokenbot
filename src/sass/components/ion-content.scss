@@ -1,0 +1,25 @@
+/*
+* Extends Ionic v1 ion-content
+*/
+
+ion-content {
+  &.bg-neutral {
+    background-color: #F2F2F2;
+  }
+
+  &.padded-bottom-cta {
+    bottom: 92px;
+  }
+
+  &.padded-bottom-cta-with-summary {
+    bottom: 134px;
+  }
+}
+
+ion-nav-view {
+  background-color: transparent !important;
+
+  &.scroll-content {
+    margin-top: -2px;
+  }
+}
